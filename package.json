@@ -1,0 +1,16 @@
+{
+  "name": "sx-deploy",
+  "version": "1.0.0",
+  "description": "Deployment management for Snapshot X",
+  "main": "index.js",
+  "repository": "https://github.com/snapshot-labs/sx-deploy.git",
+  "license": "MIT",
+  "dependencies": {
+    "@orland0x/sx-core": "^0.1.0-beta.3",
+    "@snapshot-labs/sx": "^0.1.0-beta.0",
+    "dotenv": "^16.0.3",
+    "ethers": "^5.7.2",
+    "json-bigint": "^1.0.0",
+    "starknet": "^4.9.0"
+  }
+}
