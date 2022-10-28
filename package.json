@@ -8,9 +8,16 @@
   "dependencies": {
     "@orland0x/sx-core": "^0.1.0-beta.3",
     "@snapshot-labs/sx": "^0.1.0-beta.0",
+    "@typescript-eslint/eslint-plugin": "^5.41.0",
+    "@typescript-eslint/parser": "^5.41.0",
     "dotenv": "^16.0.3",
+    "eslint": "^8.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "ethers": "^5.7.2",
     "json-bigint": "^1.0.0",
-    "starknet": "^4.9.0"
+    "json-format-cli": "^1.1.1",
+    "prettier": "^2.7.1",
+    "starknet": "^4.9.0",
+    "typescript": "^4.8.4"
   }
 }
