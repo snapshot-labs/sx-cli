@@ -1,7 +1,11 @@
 {
     "authenticators": {
-        "ethSig": "0x8ddd1d733c402eecc2a5631bec31eba18c507ed069ca771d049b3b928f7541",
-        "ethSigSessionKey": "0x4d06f40a2f93994d45d7bf4e74cf7a69f2cbb22182c5186e3f2b1761186d2da",
+        "ethSig": {
+            "address": "0x8ddd1d733c402eecc2a5631bec31eba18c507ed069ca771d049b3b928f7541"
+        },
+        "ethSigSessionKey": {
+            "address": "0x4d06f40a2f93994d45d7bf4e74cf7a69f2cbb22182c5186e3f2b1761186d2da"
+        },
         "ethTx": {
             "address": "0x72803cffd12f32e66636418d9ae61fba03a00f81a3394b5e97e52e9b4c2afa4",
             "starknetCommit": "0x76AE9330aA4f807A2e134d2fb2FcBBAfB806985E"
@@ -10,12 +14,20 @@
             "address": "0x2d8787622e1ad02bc543256e24146c6ce6cf5f5f18a6a8d8b7d7d70e0f2b3d9",
             "starknetCommit": "0x76AE9330aA4f807A2e134d2fb2FcBBAfB806985E"
         },
-        "starkSig": "0x14078f96cedb1a8beb40e0ca7de773b97d56866ecbaa74cbd92f3e5c2498c87",
-        "vanilla": "0x642b989a1ddc8c861f43d3d7a951c6dd52aa1c4194f45b838d2798a1d6dc79e"
+        "starkSig": {
+            "address": "0x14078f96cedb1a8beb40e0ca7de773b97d56866ecbaa74cbd92f3e5c2498c87"
+        },
+        "vanilla": {
+            "address": "0x642b989a1ddc8c861f43d3d7a951c6dd52aa1c4194f45b838d2798a1d6dc79e"
+        }
     },
     "executionStrategies": {
-        "vanilla": "0x6dc68be97a4be4b21c277095a0f8604a1f31daa19d5159e48f0b32665f4d8f",
-        "zodiac": "0x6bdc867d919ed93aeed12e80641033ad15b898a5a2d7623b79a6829d2491bb3"
+        "vanilla": {
+            "address": "0x6dc68be97a4be4b21c277095a0f8604a1f31daa19d5159e48f0b32665f4d8f"
+        },
+        "zodiac": {
+            "address": "0x6bdc867d919ed93aeed12e80641033ad15b898a5a2d7623b79a6829d2491bb3"
+        }
     },
     "spaceFactory": {
         "address": "0xa5d11bf2ad71fbfbf7688075bedeb81b9fb5efbf4e5931acd09ee9659e6c99",
@@ -29,6 +41,8 @@
             "fossilL1HeadersStore": "0x6ca3d25e901ce1fff2a7dd4079a24ff63ca6bbf8ba956efc71c1467975ab78f",
             "l1MessagesSender": "0x738bfb83246156b759165d244077865B994F9d33"
         },
-        "vanilla": "0x6e055cfa56673cab5b18dc0bdb7b85f6ae86012e8058dd5743d747d867c2692"
+        "vanilla": {
+            "address": "0x6e055cfa56673cab5b18dc0bdb7b85f6ae86012e8058dd5743d747d867c2692"
+        }
     }
 }

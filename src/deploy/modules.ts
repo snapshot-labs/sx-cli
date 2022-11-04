@@ -1,5 +1,9 @@
 import fs from "fs";
 import { Provider, defaultProvider, Account, ec, json } from "starknet";
+import * as dotenv from "dotenv";
+// const { dependencies } = require('./package.json');
+
+dotenv.config();
 
 const ARTIFACTS_PATH = "./node_modules/@orland0x/sx-core/starknet-artifacts";
 
@@ -27,13 +31,6 @@ async function main() {
             gatewayUrl: "gateway",
           },
         });
-
-  // const starkAccount = new Account(
-  //   provider,
-  //   process.env.ACCOUNT_ADDRESS!,
-  //   ec.getKeyPair(process.env.ACCOUNT_PRIVATE_KEY!)
-  // );
-
   const compiledVanillaAuthenticator = json.parse(
     fs
       .readFileSync(
@@ -163,7 +160,6 @@ async function main() {
     }),
   ];
   const responses = await Promise.all(deployTxs);
-  console.log(responses);
   const vanillaAuthenticatorAddress = responses[0].contract_address!;
   const ethSigAuthenticatorAddress = responses[1].contract_address!;
   const ethTxAuthenticatorAddress = responses[2].contract_address!;
@@ -176,13 +172,12 @@ async function main() {
   const ethRelayerExecutionStrategyAddress = responses[9].contract_address!;
   const spaceFactoryAddress = responses[10].contract_address!;
 
-  // Storing deployment config.
   const modules = {
-    version: "0.1.0-beta.3",
+    version: process.env.npm_package_dependencies__orland0x_sx_core,
     authenticators: {
-      vanilla: vanillaAuthenticatorAddress,
-      ethSig: ethSigAuthenticatorAddress,
-      ethSigSessionKey: ethSigSessionKeyAuthenticatorAddress,
+      vanilla: { address: vanillaAuthenticatorAddress },
+      ethSig: { address: ethSigAuthenticatorAddress },
+      ethSigSessionKey: { address: ethSigSessionKeyAuthenticatorAddress },
       ethTx: {
         address: ethTxAuthenticatorAddress,
         starknetCommit: starknetCommitAddress,
@@ -194,7 +189,7 @@ async function main() {
       starkSig: starkSigAuthenticatorAddress,
     },
     votingStrategies: {
-      vanilla: vanillaVotingStrategyAddress,
+      vanilla: { address: vanillaVotingStrategyAddress },
       ethBalanceOf: {
         address: ethBalanceOfVotingStrategyAddress,
         l1MessagesSender: l1MessagesSenderAddress,
@@ -203,8 +198,8 @@ async function main() {
       },
     },
     executionStrategies: {
-      vanilla: vanillaExecutionStrategyAddress,
-      zodiac: ethRelayerExecutionStrategyAddress,
+      vanilla: { address: vanillaExecutionStrategyAddress },
+      zodiac: { address: ethRelayerExecutionStrategyAddress },
     },
     spaceFactory: {
       address: spaceFactoryAddress,
@@ -212,7 +207,7 @@ async function main() {
     },
   };
 
-  fs.writeFileSync("./deployments/modules.json", JSON.stringify(modules));
+  fs.writeFileSync("./deployments/local-modules.json", JSON.stringify(modules));
   console.log("---- MODULE DEPLOYMENT COMPLETE ----");
 }
 
