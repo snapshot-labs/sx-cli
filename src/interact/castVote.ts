@@ -34,34 +34,34 @@ async function main() {
       },
       authenticator: { type: "string", alias: "a", demandOption: true },
       "voting-strategies": { type: "array", alias: "v", demandOption: true },
-      "execution-strategy": { type: "string", alias: "e", demandOption: true },
-      "execution-params": { type: "array", alias: "p", demandOption: true },
-      "metadata-uri": { type: "string", alias: "m", demandOption: true },
+      "proposal-id": { type: "number", alias: "p", demandOption: true },
+      choice: { type: "string", alias: "c", demandOption: true },
     })
     .parseSync();
+  const choice =
+    argv.choice == "FOR"
+      ? utils.choice.Choice.FOR
+      : argv.choice == "AGAINST"
+      ? utils.choice.Choice.AGAINST
+      : argv.choice == "ABSTAIN"
+      ? utils.choice.Choice.ABSTAIN
+      : undefined;
   const space = JSON.parse(fs.readFileSync(argv.spacePath).toString());
-
   const client = new clients.EthereumSig({
     ethUrl: process.env.ETHEREUM_URL!,
     manaUrl: process.env.STARKNET_PROVIDER_BASE_URL!,
   });
-
-  const payload = await client.propose(ethAccount, ethAccount.address, {
+  const payload = await client.vote(ethAccount, ethAccount.address, {
     space: space.address,
     authenticator: space.authenticators[argv.authenticator].address,
     strategies: argv.votingStrategies.map((x) => Number(x)),
-    executor: space.executionStrategies[argv.executionStrategy].address,
-    executionParams: argv.executionParams.map((x) => `0x${x.toString(16)}`),
-    metadataUri: argv.metadataUri,
+    proposal: 1,
+    choice: choice!,
   });
-  console.log(payload);
-
   const txClient = new clients.StarkNetTx({
     ethUrl: process.env.STARKNET_PROVIDER_BASE_URL!,
   });
-
-  const out = await txClient.propose(starkAccount, payload);
-  // TODO: signature is wrong, could be a chaidID problem
+  const out = await txClient.vote(starkAccount, payload);
   console.log(out);
 }
 

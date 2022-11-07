@@ -1,46 +1,48 @@
 {
     "authenticators": {
         "ethSig": {
-            "address": "0x012419bc2df598b3cc9d53e15e057814b2713cf7a7e9b7bf79ba6b1167f8233f"
+            "address": "0x033d250ead7dba6102ee7ea2990b39090b8e971f330ec0174f47417d2f29bfcd"
         },
         "ethSigSessionKey": {
-            "address": "0x06cc5302a497b4556bbca92d1b4f58fb7b6011b9306cd7ea35d0ae86d3e3d275"
+            "address": "0x0638ad07fec1cff60facef0fb04032cb668466a51140abdde2ab4706dcd647c5"
         },
         "ethTx": {
-            "address": "0x04a83c27babadb77a7fc686ad8db8806214dda2968a307bc51bfdb33a565a175",
+            "address": "0x02c3c9a309c2b56da164906cd52ec9315b429d0175db45f4fef6271079393db2",
             "starknetCommit": "0x76AE9330aA4f807A2e134d2fb2FcBBAfB806985E"
         },
         "ethTxSessionKey": {
-            "address": "0x0619d9700e29249220c19e4b4227b2f7007f045fa20cc574106ea09b8b332baf",
+            "address": "0x028325dbe3aadd256402836bbc27aed0600f4b046225fcb4728b40347e257606",
             "starknetCommit": "0x76AE9330aA4f807A2e134d2fb2FcBBAfB806985E"
         },
-        "starkSig": "0x06dbc76c4fbfde78e1457df3df53de63dbe0ec3eb99345fd29097a9f83337dc8",
+        "starkSig": {
+            "address": "0x000990dda7f115740aa24bc79d46084b34287bc87a5f0b70b8fa7b3894ce6218"
+        },
         "vanilla": {
-            "address": "0x079461e67c21c0cac364a320da42309c1419ec304a059179181446bd13adc16d"
+            "address": "0x00ae672b36615575fede9b7b0faebc716fcecf931283f95b3d7242267e35137d"
         }
     },
     "executionStrategies": {
         "vanilla": {
-            "address": "0x06ace110f9504055a4ef433e2b55642f66445e6fa146b17f0122f7ea2ab00d01"
+            "address": "0x012641025dec35b3edf79ae924f3d750d0f38277e12207ba243c5235438e4b7b"
         },
         "zodiac": {
-            "address": "0x039b46cab4781747a317d05c9725ad03b8c794b7ab75a6e4c1c9ae8de0415a7f"
+            "address": "0x065e0107afdb07b4209ab7a938197ab1b5ee1859fa3f364fa815f0bd600d496f"
         }
     },
     "spaceFactory": {
-        "address": "0x038eee719376a74656728300c66852d1d152ef83d99fd441fbf3e67c3e623b6e",
+        "address": "0x061adcb7289f75631e7ce9f353b478476e3f87fff662e5882b6535f08950f215",
         "spaceClassHash": "0x591469387a06fb88dd66559f4bc91e4c0c1e61e65c259b14a4d43f274fdabd9"
     },
-    "version": "0.1.0-beta.3",
+    "version": "^0.1.0-beta.3",
     "votingStrategies": {
         "ethBalanceOf": {
-            "address": "0x00dac51e7321123e85573264f2aebca9c898b90b42b84f6330ef4210d018ff47",
+            "address": "0x07742026d8ffc02a7ea2a49f58894f3bdce0a17ef76d9d6d106abab53985c11f",
             "fossilFactRegistry": "0x363108ac1521a47b4f7d82f8ba868199bc1535216bbedfc1b071ae93cc406fd",
             "fossilL1HeadersStore": "0x6ca3d25e901ce1fff2a7dd4079a24ff63ca6bbf8ba956efc71c1467975ab78f",
             "l1MessagesSender": "0x738bfb83246156b759165d244077865B994F9d33"
         },
         "vanilla": {
-            "address": "0x05c86e01e341357ca55b457b4ac8da783d42f1545b3870a1703908898cb8a159"
+            "address": "0x00ad906141d0637d041c1cc92c823a9d0a81bee3ccfa5547133265b7bd9c81d9"
         }
     }
 }

@@ -186,7 +186,7 @@ async function main() {
         address: ethTxSessionKeyAuthenticatorAddress,
         starknetCommit: starknetCommitAddress,
       },
-      starkSig: starkSigAuthenticatorAddress,
+      starkSig: { address: starkSigAuthenticatorAddress },
     },
     votingStrategies: {
       vanilla: { address: vanillaVotingStrategyAddress },

@@ -85,7 +85,8 @@ async function main() {
   const proposalThreshold = utils.splitUint256.SplitUint256.fromUint(BigInt(1));
   const metadataUriArr = utils.strings.strToShortStringArr(argv.metadataUri);
 
-  //   Deploy spaces through space factory
+  // Deploy space through space factory
+  // We set the public key for the account to zero which renders it impossible to execute regular account txs
   const { transaction_hash: txHash } = await starkAccount.execute(
     [
       {

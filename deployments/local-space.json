@@ -1,18 +1,21 @@
 {
-    "address": "0x4d9f408e8f6cb3175afab7e90d1e021050b60e8f9215552f1db2d072269f2d4",
+    "address": "0x46d3409ac3003053541a63e7db348c6af115708708441e3424bbcca5263f2bf",
     "authenticators": {
         "ethSig": {
-            "address": "0x05b4cc22a24f93bd5da96a245671fc1148df5f8438fb69b1f56d31ebc1773fd5"
+            "address": "0x033d250ead7dba6102ee7ea2990b39090b8e971f330ec0174f47417d2f29bfcd"
         },
         "ethTx": {
-            "address": "0x049f3aa0af5bf1d15d73747986fc1adb787faa9bf53fcdc40b16cdb5a325e746"
+            "address": "0x02c3c9a309c2b56da164906cd52ec9315b429d0175db45f4fef6271079393db2"
+        },
+        "vanilla": {
+            "address": "0x00ae672b36615575fede9b7b0faebc716fcecf931283f95b3d7242267e35137d"
         }
     },
     "classHash": "0x591469387a06fb88dd66559f4bc91e4c0c1e61e65c259b14a4d43f274fdabd9",
-    "controller": "0x870e565afd1caa9624ba52455ea5010c739fc48b45183ea73b9d5d6813536e",
+    "controller": "0x107c363d6d2721fe93da30005e7754979e3dbe65f1443e8d7c6cd0998c769c0",
     "executionStrategies": {
         "vanilla": {
-            "address": "0x0523cdf69647dee268b0e6e9e5197813ca1157347d8b3dbc44cdaa955d2139cf"
+            "address": "0x012641025dec35b3edf79ae924f3d750d0f38277e12207ba243c5235438e4b7b"
         }
     },
     "maxVotingDuration": "0x15180",
@@ -21,11 +24,11 @@
     "name": "My Space",
     "proposalThreshold": "0x1",
     "quorum": "0x1",
-    "version": "0.1.0-beta.3",
+    "version": "^0.1.0-beta.3",
     "votingDelay": "0x0",
     "votingStrategies": {
         "vanilla": {
-            "address": "0x0346f28e3dd99466e571979eb61bf582aa1584a89042916a51c2f892d9525941",
+            "address": "0x00ad906141d0637d041c1cc92c823a9d0a81bee3ccfa5547133265b7bd9c81d9",
             "index": 0,
             "parameters": [
             ]
