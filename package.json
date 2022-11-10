@@ -26,7 +26,7 @@
     "yargs": "^17.6.1"
   },
   "scripts": {
-    "start-devnet": "starknet-devnet -p 8000",
+    "chain:l2": "starknet-devnet -p 8000 --seed 1",
     "declare-space": "starknet declare --contract ./node_modules/@orland0x/sx-core/starknet-artifacts/contracts/starknet/SpaceAccount.cairo/SpaceAccount.json --feeder_gateway_url http://127.0.0.1:8000/ --gateway_url http://127.0.0.1:8000/ --chain_id 0x534e5f474f45524c49 --network_id devnet",
     "deploy-modules": "ts-node src/deploy/modules.ts",
     "deploy-space": "ts-node src/deploy/space.ts",
