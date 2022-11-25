@@ -17,14 +17,14 @@ async function main() {
             gatewayUrl: "gateway",
           },
         });
-    console.log(provider);
-    const out = await provider.getBlock();
-    console.log(out);
-    }
+  console.log(provider);
+  const out = await provider.getBlock();
+  console.log(out);
+}
 
-    main()
-      .then(() => process.exit(0))
-      .catch((error) => {
-        console.error(error);
-        process.exit(1);
-      });
+main()
+  .then(() => process.exit(0))
+  .catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });

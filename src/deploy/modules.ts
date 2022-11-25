@@ -3,6 +3,10 @@ import { Provider, defaultProvider, Account, ec, json } from "starknet";
 import * as dotenv from "dotenv";
 // const { dependencies } = require('./package.json');
 
+function sleep() {
+  return new Promise((resolve) => setTimeout(resolve, 10000));
+}
+
 dotenv.config();
 
 const ARTIFACTS_PATH = "./node_modules/@orland0x/sx-core/starknet-artifacts";
@@ -11,7 +15,7 @@ async function main() {
   // Obtained via declaring the space account contract:
   // starknet declare --contract ./starknet-artifacts/contracts/starknet/SpaceAccount.cairo/SpaceAccount.json
   const spaceClassHash =
-    "0x591469387a06fb88dd66559f4bc91e4c0c1e61e65c259b14a4d43f274fdabd9";
+    "0x1c34af419b5e573e3f8bf2f302947b2bb55efa789266d1b1bd4a39c7a3a0aab";
 
   const starknetCommitAddress = "0x76AE9330aA4f807A2e134d2fb2FcBBAfB806985E";
 
@@ -129,48 +133,120 @@ async function main() {
       .toString("ascii")
   );
 
-  const deployTxs = [
-    provider.deployContract({ contract: compiledVanillaAuthenticator }),
-    provider.deployContract({ contract: compiledEthSigAuthenticator }),
-    provider.deployContract({
-      contract: compiledEthTxAuthenticator,
-      constructorCalldata: [starknetCommitAddress],
-    }),
-    provider.deployContract({ contract: compiledStarkSigAuthenticator }),
-    provider.deployContract({
-      contract: compiledEthSigSessionKeyAuthenticator,
-    }),
-    provider.deployContract({
-      contract: compiledEthTxSessionKeyAuthenticator,
-      constructorCalldata: [starknetCommitAddress],
-    }),
-    provider.deployContract({ contract: compiledVanillaVotingStrategy }),
-    provider.deployContract({
-      contract: compiledEthBalanceOfVotingStrategy,
-      constructorCalldata: [
-        fossilFactRegistryAddress,
-        fossilL1HeadersStoreAddress,
-      ],
-    }),
-    provider.deployContract({ contract: compiledVanillaExecutionStrategy }),
-    provider.deployContract({ contract: compiledEthRelayerExecutionStrategy }),
-    provider.deployContract({
-      contract: compiledSpaceFactory,
-      constructorCalldata: [spaceClassHash],
-    }),
-  ];
-  const responses = await Promise.all(deployTxs);
-  const vanillaAuthenticatorAddress = responses[0].contract_address!;
-  const ethSigAuthenticatorAddress = responses[1].contract_address!;
-  const ethTxAuthenticatorAddress = responses[2].contract_address!;
-  const starkSigAuthenticatorAddress = responses[3].contract_address!;
-  const ethSigSessionKeyAuthenticatorAddress = responses[4].contract_address!;
-  const ethTxSessionKeyAuthenticatorAddress = responses[5].contract_address!;
-  const vanillaVotingStrategyAddress = responses[6].contract_address!;
-  const ethBalanceOfVotingStrategyAddress = responses[7].contract_address!;
-  const vanillaExecutionStrategyAddress = responses[8].contract_address!;
-  const ethRelayerExecutionStrategyAddress = responses[9].contract_address!;
-  const spaceFactoryAddress = responses[10].contract_address!;
+  // const deployTxs = [
+  //   provider.deployContract({ contract: compiledVanillaAuthenticator }),
+  //   provider.deployContract({ contract: compiledEthSigAuthenticator }),
+  //   provider.deployContract({
+  //     contract: compiledEthTxAuthenticator,
+  //     constructorCalldata: [starknetCommitAddress],
+  //   }),
+  //   provider.deployContract({ contract: compiledStarkSigAuthenticator }),
+  //   provider.deployContract({
+  //     contract: compiledEthSigSessionKeyAuthenticator,
+  //   }),
+  //   provider.deployContract({
+  //     contract: compiledEthTxSessionKeyAuthenticator,
+  //     constructorCalldata: [starknetCommitAddress],
+  //   }),
+  //   provider.deployContract({ contract: compiledVanillaVotingStrategy }),
+  //   provider.deployContract({
+  //     contract: compiledEthBalanceOfVotingStrategy,
+  //     constructorCalldata: [
+  //       fossilFactRegistryAddress,
+  //       fossilL1HeadersStoreAddress,
+  //     ],
+  //   }),
+  //   provider.deployContract({ contract: compiledVanillaExecutionStrategy }),
+  //   provider.deployContract({ contract: compiledEthRelayerExecutionStrategy }),
+  //   provider.deployContract({
+  //     contract: compiledSpaceFactory,
+  //     constructorCalldata: [spaceClassHash],
+  //   }),
+  // ];
+  // const responses = await Promise.all(deployTxs);
+  let response = await provider.deployContract({
+    contract: compiledVanillaAuthenticator,
+  });
+  const vanillaAuthenticatorAddress = response.contract_address!;
+  sleep();
+  console.log(1);
+  response = await provider.deployContract({
+    contract: compiledEthSigAuthenticator,
+  });
+  const ethSigAuthenticatorAddress = response.contract_address!;
+  await sleep();
+  console.log(1);
+  response = await provider.deployContract({
+    contract: compiledEthTxAuthenticator,
+    constructorCalldata: [starknetCommitAddress],
+  });
+  const ethTxAuthenticatorAddress = response.contract_address!;
+  await sleep();
+  console.log(1);
+  response = await provider.deployContract({
+    contract: compiledStarkSigAuthenticator,
+  });
+  const starkSigAuthenticatorAddress = response.contract_address!;
+  sleep();
+  console.log(1);
+  response = await provider.deployContract({
+    contract: compiledEthSigSessionKeyAuthenticator,
+  });
+  const ethSigSessionKeyAuthenticatorAddress = response.contract_address!;
+  await sleep();
+  console.log(1);
+  response = await provider.deployContract({
+    contract: compiledEthTxSessionKeyAuthenticator,
+    constructorCalldata: [starknetCommitAddress],
+  });
+  const ethTxSessionKeyAuthenticatorAddress = response.contract_address!;
+  await sleep();
+  console.log(1);
+  response = await provider.deployContract({
+    contract: compiledVanillaVotingStrategy,
+  });
+  const vanillaVotingStrategyAddress = response.contract_address!;
+  await sleep();
+  console.log(1);
+  response = await provider.deployContract({
+    contract: compiledEthBalanceOfVotingStrategy,
+    constructorCalldata: [
+      fossilFactRegistryAddress,
+      fossilL1HeadersStoreAddress,
+    ],
+  });
+  const ethBalanceOfVotingStrategyAddress = response.contract_address!;
+  await sleep();
+  console.log(1);
+  response = await provider.deployContract({
+    contract: compiledVanillaExecutionStrategy,
+  });
+  const vanillaExecutionStrategyAddress = response.contract_address!;
+  await sleep();
+  console.log(1);
+  response = await provider.deployContract({
+    contract: compiledEthRelayerExecutionStrategy,
+  });
+  const ethRelayerExecutionStrategyAddress = response.contract_address!;
+  await sleep();
+  console.log(1);
+  response = await provider.deployContract({
+    contract: compiledSpaceFactory,
+    constructorCalldata: [spaceClassHash],
+  });
+  const spaceFactoryAddress = response.contract_address!;
+  await sleep();
+  console.log(1);
+
+  // const ethTxAuthenticatorAddress = responses[2].contract_address!;
+  // const starkSigAuthenticatorAddress = responses[3].contract_address!;
+  // const ethSigSessionKeyAuthenticatorAddress = responses[4].contract_address!;
+  // const ethTxSessionKeyAuthenticatorAddress = responses[5].contract_address!;
+  // const vanillaVotingStrategyAddress = responses[6].contract_address!;
+  // const ethBalanceOfVotingStrategyAddress = responses[7].contract_address!;
+  // const vanillaExecutionStrategyAddress = responses[8].contract_address!;
+  // const ethRelayerExecutionStrategyAddress = responses[9].contract_address!;
+  // const spaceFactoryAddress = responses[10].contract_address!;
 
   const modules = {
     version: process.env.npm_package_dependencies__orland0x_sx_core,
@@ -199,7 +275,7 @@ async function main() {
     },
     executionStrategies: {
       vanilla: { address: vanillaExecutionStrategyAddress },
-      zodiac: { address: ethRelayerExecutionStrategyAddress },
+      ethRelayer: { address: ethRelayerExecutionStrategyAddress },
     },
     spaceFactory: {
       address: spaceFactoryAddress,
@@ -207,7 +283,10 @@ async function main() {
     },
   };
 
-  fs.writeFileSync("./deployments/local-modules.json", JSON.stringify(modules));
+  fs.writeFileSync(
+    "./deployments/modules-goerli2.json",
+    JSON.stringify(modules)
+  );
   console.log("---- MODULE DEPLOYMENT COMPLETE ----");
 }
 

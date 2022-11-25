@@ -5,7 +5,7 @@
   "repository": "https://github.com/snapshot-labs/sx-deploy.git",
   "license": "MIT",
   "dependencies": {
-    "@orland0x/sx-core": "^0.1.0-beta.3",
+    "@orland0x/sx-core": "0.1.0-beta.1",
     "@snapshot-labs/sx": "^0.1.0-beta.13",
     "@types/yargs": "^17.0.13",
     "@typescript-eslint/eslint-plugin": "^5.41.0",
@@ -27,7 +27,7 @@
   },
   "scripts": {
     "chain:l2": "starknet-devnet -p 8000 --seed 1",
-    "declare-space": "starknet declare --contract ./node_modules/@orland0x/sx-core/starknet-artifacts/contracts/starknet/SpaceAccount.cairo/SpaceAccount.json --feeder_gateway_url http://127.0.0.1:8000/ --gateway_url http://127.0.0.1:8000/ --chain_id 0x534e5f474f45524c49 --network_id devnet",
+    "declare-space": "starknet declare --contract ./node_modules/@orland0x/sx-core/starknet-artifacts/contracts/starknet/SpaceAccount.cairo/SpaceAccount.json",
     "deploy-modules": "ts-node src/deploy/modules.ts",
     "deploy-space": "ts-node src/deploy/space.ts",
     "create-proposal": "ts-node src/interact/createProposal.ts",

@@ -1,0 +1,48 @@
+{
+    "authenticators": {
+        "ethSig": {
+            "address": "0x64cce9272197eba6353f5bbf060e097e516b411e66e83a9cf5910a08697df14"
+        },
+        "ethSigSessionKey": {
+            "address": "0x4112e7aef90c47058238ccb76bf79ad5188afdf366870015185e3c7468ccbd9"
+        },
+        "ethTx": {
+            "address": "0x68a2d3c6d882ec0e2e94042556878d27e832a28e1308df04ad35fd8bae9ec6b",
+            "starknetCommit": "0x76AE9330aA4f807A2e134d2fb2FcBBAfB806985E"
+        },
+        "ethTxSessionKey": {
+            "address": "0x64bb9fd620d7e4c5f5895329e8f1d3d5f485ccfb2b16345a1ca86658f24c9f6",
+            "starknetCommit": "0x76AE9330aA4f807A2e134d2fb2FcBBAfB806985E"
+        },
+        "starkSig": {
+            "address": "0x59283b509832027a386b3f419628a5b149e9d6462a6547c63e92bd4a09a7245"
+        },
+        "vanilla": {
+            "address": "0x5e1f273ca9a11f78bfb291cbe1b49294cf3c76dd48951e7ab7db6d9fb1e7d62"
+        }
+    },
+    "executionStrategies": {
+        "ethRelayer": {
+            "address": "0x21dda40770f4317582251cffd5a0202d6b223dc167e5c8db25dc887d11eba81"
+        },
+        "vanilla": {
+            "address": "0x4ecc83848a519cc22b0d0ffb70e65ec8dde85d3d13439eff7145d4063cf6b4d"
+        }
+    },
+    "spaceFactory": {
+        "address": "0xe1e511e496a72791ab3d591ba7d571a32de4261d84e4d183f26b6325970e20",
+        "spaceClassHash": "0x1c34af419b5e573e3f8bf2f302947b2bb55efa789266d1b1bd4a39c7a3a0aab"
+    },
+    "version": "^0.1.0-beta.1",
+    "votingStrategies": {
+        "ethBalanceOf": {
+            "address": "0x19cd748e8bfc79d594c4e18611c63d8cc731ebf0ac7e1342bd1b873e2a85d11",
+            "fossilFactRegistry": "0x363108ac1521a47b4f7d82f8ba868199bc1535216bbedfc1b071ae93cc406fd",
+            "fossilL1HeadersStore": "0x6ca3d25e901ce1fff2a7dd4079a24ff63ca6bbf8ba956efc71c1467975ab78f",
+            "l1MessagesSender": "0x738bfb83246156b759165d244077865B994F9d33"
+        },
+        "vanilla": {
+            "address": "0x58623786b93d9b6ed1f83cec5c6fa6bea5f399d2795ee56a6123bdd83f5aa48"
+        }
+    }
+}
