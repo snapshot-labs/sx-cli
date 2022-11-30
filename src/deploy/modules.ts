@@ -19,11 +19,19 @@ async function main() {
 
   const starknetCommitAddress = "0x76AE9330aA4f807A2e134d2fb2FcBBAfB806985E";
 
-  const l1MessagesSenderAddress = "0x738bfb83246156b759165d244077865B994F9d33";
+  // Goerli2 Herodotus Deployment:
+  const l1MessagesSenderAddress = "0x456Cb24d30eaA6AfFC2A6924Dae0d2a0a8c99C73";
   const fossilFactRegistryAddress =
-    "0x363108ac1521a47b4f7d82f8ba868199bc1535216bbedfc1b071ae93cc406fd";
+    "0x2e39818908f0da118fde6b88b52e4dbdf13d2e171e488507f40deb6811bde3f";
   const fossilL1HeadersStoreAddress =
-    "0x6ca3d25e901ce1fff2a7dd4079a24ff63ca6bbf8ba956efc71c1467975ab78f";
+    "0x69606dd1655fdbbf8189e88566c54890be8f7e4a3650398ac17f6586a4a336d";
+
+  // Goerli Herodotus Deployment:
+  // const l1MessagesSenderAddress = "0x738bfb83246156b759165d244077865B994F9d33";
+  // const fossilFactRegistryAddress =
+  //   "0x363108ac1521a47b4f7d82f8ba868199bc1535216bbedfc1b071ae93cc406fd";
+  // const fossilL1HeadersStoreAddress =
+  //   "0x6ca3d25e901ce1fff2a7dd4079a24ff63ca6bbf8ba956efc71c1467975ab78f";
 
   const provider =
     process.env.STARKNET_PROVIDER_BASE_URL === undefined
@@ -133,37 +141,6 @@ async function main() {
       .toString("ascii")
   );
 
-  // const deployTxs = [
-  //   provider.deployContract({ contract: compiledVanillaAuthenticator }),
-  //   provider.deployContract({ contract: compiledEthSigAuthenticator }),
-  //   provider.deployContract({
-  //     contract: compiledEthTxAuthenticator,
-  //     constructorCalldata: [starknetCommitAddress],
-  //   }),
-  //   provider.deployContract({ contract: compiledStarkSigAuthenticator }),
-  //   provider.deployContract({
-  //     contract: compiledEthSigSessionKeyAuthenticator,
-  //   }),
-  //   provider.deployContract({
-  //     contract: compiledEthTxSessionKeyAuthenticator,
-  //     constructorCalldata: [starknetCommitAddress],
-  //   }),
-  //   provider.deployContract({ contract: compiledVanillaVotingStrategy }),
-  //   provider.deployContract({
-  //     contract: compiledEthBalanceOfVotingStrategy,
-  //     constructorCalldata: [
-  //       fossilFactRegistryAddress,
-  //       fossilL1HeadersStoreAddress,
-  //     ],
-  //   }),
-  //   provider.deployContract({ contract: compiledVanillaExecutionStrategy }),
-  //   provider.deployContract({ contract: compiledEthRelayerExecutionStrategy }),
-  //   provider.deployContract({
-  //     contract: compiledSpaceFactory,
-  //     constructorCalldata: [spaceClassHash],
-  //   }),
-  // ];
-  // const responses = await Promise.all(deployTxs);
   let response = await provider.deployContract({
     contract: compiledVanillaAuthenticator,
   });
@@ -217,7 +194,6 @@ async function main() {
   });
   const ethBalanceOfVotingStrategyAddress = response.contract_address!;
   await sleep();
-  console.log(1);
   response = await provider.deployContract({
     contract: compiledVanillaExecutionStrategy,
   });
@@ -237,16 +213,6 @@ async function main() {
   const spaceFactoryAddress = response.contract_address!;
   await sleep();
   console.log(1);
-
-  // const ethTxAuthenticatorAddress = responses[2].contract_address!;
-  // const starkSigAuthenticatorAddress = responses[3].contract_address!;
-  // const ethSigSessionKeyAuthenticatorAddress = responses[4].contract_address!;
-  // const ethTxSessionKeyAuthenticatorAddress = responses[5].contract_address!;
-  // const vanillaVotingStrategyAddress = responses[6].contract_address!;
-  // const ethBalanceOfVotingStrategyAddress = responses[7].contract_address!;
-  // const vanillaExecutionStrategyAddress = responses[8].contract_address!;
-  // const ethRelayerExecutionStrategyAddress = responses[9].contract_address!;
-  // const spaceFactoryAddress = responses[10].contract_address!;
 
   const modules = {
     version: process.env.npm_package_dependencies__orland0x_sx_core,

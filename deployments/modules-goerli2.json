@@ -33,13 +33,13 @@
         "address": "0xe1e511e496a72791ab3d591ba7d571a32de4261d84e4d183f26b6325970e20",
         "spaceClassHash": "0x1c34af419b5e573e3f8bf2f302947b2bb55efa789266d1b1bd4a39c7a3a0aab"
     },
-    "version": "^0.1.0-beta.1",
+    "version": "0.1.0-beta.1",
     "votingStrategies": {
         "ethBalanceOf": {
-            "address": "0x19cd748e8bfc79d594c4e18611c63d8cc731ebf0ac7e1342bd1b873e2a85d11",
-            "fossilFactRegistry": "0x363108ac1521a47b4f7d82f8ba868199bc1535216bbedfc1b071ae93cc406fd",
-            "fossilL1HeadersStore": "0x6ca3d25e901ce1fff2a7dd4079a24ff63ca6bbf8ba956efc71c1467975ab78f",
-            "l1MessagesSender": "0x738bfb83246156b759165d244077865B994F9d33"
+            "address": "0xd1b81feff3095ca9517fdfc7427e742ce96f7ca8f3b2664a21b2fba552493b",
+            "fossilFactRegistry": "0x2e39818908f0da118fde6b88b52e4dbdf13d2e171e488507f40deb6811bde3f",
+            "fossilL1HeadersStore": "0x69606dd1655fdbbf8189e88566c54890be8f7e4a3650398ac17f6586a4a336d",
+            "l1MessagesSender": "0x456Cb24d30eaA6AfFC2A6924Dae0d2a0a8c99C73"
         },
         "vanilla": {
             "address": "0x58623786b93d9b6ed1f83cec5c6fa6bea5f399d2795ee56a6123bdd83f5aa48"
