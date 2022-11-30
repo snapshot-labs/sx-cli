@@ -42,6 +42,7 @@ async function main() {
       "voting-strategy-params": {
         type: "array",
         alias: "p",
+        string: true,
       },
       "execution-strategies": { type: "array", alias: "e", demandOption: true },
       "modules-path": {
@@ -71,9 +72,7 @@ async function main() {
     argv.votingStrategyParams.forEach((x) =>
       x == "x"
         ? votingStrategyParams.push([])
-        : votingStrategyParams[votingStrategyParams.length - 1].push(
-            `0x${x.toString(16)}`
-          )
+        : votingStrategyParams[votingStrategyParams.length - 1].push(x)
     );
   }
   const votingStrategyParamsFlat =

@@ -36,5 +36,8 @@
     "format-json": "json-format ./deployments/*.json",
     "format-ts": "eslint . --ext .ts --fix",
     "format": "yarn format-json && yarn format-ts"
+  },
+  "yargs": {
+    "parse-numbers": false
   }
 }

@@ -1,11 +1,14 @@
 {
-    "address": "0x750118894bf8b3ad7fd79763899c4528b2a7a0c17d7185dff78eaddbff2cb0b",
+    "address": "0x7e6e9047eb910f84f7e3b86cea7b1d7779c109c970a39b54379c1f4fa395b28",
     "authenticators": {
         "ethSig": {
             "address": "0x64cce9272197eba6353f5bbf060e097e516b411e66e83a9cf5910a08697df14"
         },
         "ethSigSessionKey": {
             "address": "0x4112e7aef90c47058238ccb76bf79ad5188afdf366870015185e3c7468ccbd9"
+        },
+        "ethTx": {
+            "address": "0x68a2d3c6d882ec0e2e94042556878d27e832a28e1308df04ad35fd8bae9ec6b"
         },
         "ethTxSessionKey": {
             "address": "0x64bb9fd620d7e4c5f5895329e8f1d3d5f485ccfb2b16345a1ca86658f24c9f6"
@@ -30,12 +33,20 @@
     "maxVotingDuration": "0x15180",
     "metadataUri": "",
     "minVotingDuration": "0x0",
-    "name": "TestSpace",
+    "name": "My Space",
     "proposalThreshold": "1",
     "quorum": "1",
-    "version": "0.1.0-beta.2",
+    "version": "0.1.0-beta.1",
     "votingDelay": "0x0",
     "votingStrategies": {
+        "ethBalanceOf": {
+            "address": "0xd1b81feff3095ca9517fdfc7427e742ce96f7ca8f3b2664a21b2fba552493b",
+            "index": 1,
+            "parameters": [
+                "0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6",
+                "0x3"
+            ]
+        },
         "vanilla": {
             "address": "0x58623786b93d9b6ed1f83cec5c6fa6bea5f399d2795ee56a6123bdd83f5aa48",
             "index": 0,
