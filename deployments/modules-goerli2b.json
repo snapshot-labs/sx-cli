@@ -1,0 +1,47 @@
+{
+    "authenticators": {
+        "ethSig": {
+            "address": "0x217503a6996aa5dc2353a51858958302e86e4215f0a247e64cd6272b5a18d88"
+        },
+        "ethSigSessionKey": {
+            "address": "0x5e59b043c7fd01b2669c5f6518eecb8ddbc8c6c1708ae7ed2e0134c5773373b"
+        },
+        "ethTx": {
+            "address": "0x29ec509b2ede56f011c7b509117ee92e0f36c841ad4009b3f05213e600fb273",
+            "starknetCommit": "0x76AE9330aA4f807A2e134d2fb2FcBBAfB806985E"
+        },
+        "ethTxSessionKey": {
+            "address": "0x35d788d4dd388352363503a36d95f67db311b27c756850b66067f5de13138a5",
+            "starknetCommit": "0x76AE9330aA4f807A2e134d2fb2FcBBAfB806985E"
+        },
+        "starkSig": {
+            "address": "0xb80577b55215cd3e676b4a1bca536cfb7f9492207ed93455d75674ac7a488c"
+        },
+        "vanilla": {
+            "address": "0x60a223c389f4ba229bd9652a77b97a4dead872755c0b477f2f06c4ab5aa5700"
+        }
+    },
+    "executionStrategies": {
+        "ethRelayer": {
+            "address": "0x33fbbdf419b4fe620d21f018e20339c2b78537437415322408342d1548e6183"
+        },
+        "vanilla": {
+            "address": "0x1f0ecb60fceed9b93dce6bdb37cf40ddfd227f87b923ea2c2a1d7566a22fb92"
+        }
+    },
+    "spaceFactory": {
+        "address": "0x73253ce29da252357d5593a6835d9fda103478184d1d013a8e5a63d877cde1b",
+        "spaceClassHash": "0x1c34af419b5e573e3f8bf2f302947b2bb55efa789266d1b1bd4a39c7a3a0aab"
+    },
+    "votingStrategies": {
+        "ethBalanceOf": {
+            "address": "0x401123cb1dfd866f368b0570fc5a7919a4c7a04c2e9ea10295bec8e8c4976af",
+            "fossilFactRegistry": "0x2e39818908f0da118fde6b88b52e4dbdf13d2e171e488507f40deb6811bde3f",
+            "fossilL1HeadersStore": "0x69606dd1655fdbbf8189e88566c54890be8f7e4a3650398ac17f6586a4a336d",
+            "l1MessagesSender": "0x456Cb24d30eaA6AfFC2A6924Dae0d2a0a8c99C73"
+        },
+        "vanilla": {
+            "address": "0x1f516e55e882679ee7cb685f83b7bad8f53d01bf237ef62aa6217d95d23313c"
+        }
+    }
+}

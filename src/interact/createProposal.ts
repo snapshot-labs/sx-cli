@@ -43,6 +43,7 @@ async function main() {
 
   const client = new clients.EthereumSig({
     ethUrl: process.env.ETHEREUM_URL!,
+    starkProvider: provider,
     manaUrl: process.env.STARKNET_PROVIDER_BASE_URL!,
   });
 
@@ -58,6 +59,7 @@ async function main() {
 
   const txClient = new clients.StarkNetTx({
     ethUrl: process.env.STARKNET_PROVIDER_BASE_URL!,
+    starkProvider: provider,
   });
 
   const out = await txClient.propose(starkAccount, payload);
