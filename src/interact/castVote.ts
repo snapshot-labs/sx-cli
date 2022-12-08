@@ -49,17 +49,19 @@ async function main() {
   const space = JSON.parse(fs.readFileSync(argv.spacePath).toString());
   const client = new clients.EthereumSig({
     ethUrl: process.env.ETHEREUM_URL!,
+    starkProvider: provider,
     manaUrl: process.env.STARKNET_PROVIDER_BASE_URL!,
   });
   const payload = await client.vote(ethAccount, ethAccount.address, {
     space: space.address,
     authenticator: space.authenticators[argv.authenticator].address,
     strategies: argv.votingStrategies.map((x) => Number(x)),
-    proposal: 1,
+    proposal: argv.proposalId,
     choice: choice!,
   });
   const txClient = new clients.StarkNetTx({
     ethUrl: process.env.STARKNET_PROVIDER_BASE_URL!,
+    starkProvider: provider,
   });
   const out = await txClient.vote(starkAccount, payload);
   console.log(out);
