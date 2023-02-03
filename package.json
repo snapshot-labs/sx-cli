@@ -13,7 +13,7 @@
     "dotenv": "^16.0.3",
     "eslint": "^8.26.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "ethers": "^5.7.2",
+    "ethers": "^6.0.0",
     "json-bigint": "^1.0.0",
     "json-format-cli": "^1.1.1",
     "patch-package": "^6.5.0",
